@@ -10,7 +10,7 @@ mainClock = pygame.time.Clock()
 # Setup the PyGame Window
 WINDOWWIDTH = 400 
 WINDOWHEIGHT = 400
-windowsurface = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGH), 0, 32)
+windowsurface = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT), 0, 32)
 pygame.display.set_caption('Collision Detection 2022')
 
 # Setup colors. 
@@ -39,7 +39,7 @@ MOVESPEED = 6
 # Run the game loop.
 while True:
     # Check for events.
-    for event in pygame.eventget():
+    for event in pygame.event.get():
         if event.type == QUIT:
             pygame.quit()
             sys.exit()
@@ -57,7 +57,7 @@ while True:
             if event.key == K_DOWN or event.key == K_s:
                 moveUp = False 
                 moveDown = True 
-        if event.rtpe == KEYUP:
+        if event.type == KEYUP:
             if event.key == K_ESCAPE:
                 pygame.quit()
                 sys.exit()
@@ -84,7 +84,7 @@ while True:
         foods.append(pygame.Rect(random.randint(0, WINDOWWIDTH - FOODSIZE), random.randint(0, WINDOWHEIGHT - FOODSIZE), FOODSIZE, FOODSIZE))
 
     # Draw white background on Window Surface.
-    windowSurface .fill(WHITE)
+    windowsurface .fill(WHITE)
 
     # Move the player.
     if moveDown and player.bottom < WINDOWHEIGHT:
@@ -97,7 +97,7 @@ while True:
         player.right += MOVESPEED
 
     # Draw the player surface. 
-    pygame.draw.rect(windowSurface, BLACK, player)
+    pygame.draw.rect(windowsurface, BLACK, player)
 
     # Check for player colliding with food(s).
     for food in foods[:]:
@@ -106,7 +106,11 @@ while True:
 
     # Draw the food.
     for i in range(len(foods)):
-        pygame.draw.rect(windowSurface, GREEN, foods[i])  
+        pygame.draw.rect(windowsurface, GREEN, foods[i])  
+
+    # Draw the window to the screen.
+    pygame.display.update()
+    mainClock.tick(40)    
 
 
 
