@@ -62,7 +62,7 @@ while True:
                 pygame.quit()
                 sys.exit()
             # Check to see if the player has stopped moving.
-            if eventkey == K_LEFT or event.key == K_a:
+            if event.key == K_LEFT or event.key == K_a:
                 moveLeft = False 
             if event.key == K_RIGHT or event.key == K_d:
                 moveRight = False
