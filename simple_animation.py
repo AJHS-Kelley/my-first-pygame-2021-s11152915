@@ -1,4 +1,4 @@
-# simple Animation with PyGame, Jermaine Jeffcoat, 12/24/22, 2:03PM, v0.2
+# simple Animation with PyGame, Jermaine Jeffcoat, 12/24/22, 2:11PM, v0.3
 
 import pygame, sys, time
 from pygame.locals import *
@@ -19,3 +19,9 @@ UPLEFT = 'upleft'
 UPRIGHT = 'upright'
 
 MOVESPEED = 4
+
+# Setup color values.
+WHITE = (255, 255, 255)
+RED = (255, 0, 0)
+GREEN = (0, 255, 0)
+BLUE = (0, 0, 255)
