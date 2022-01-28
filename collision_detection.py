@@ -51,7 +51,7 @@ while True:
             if event.key == K_RIGHT or event.key == K_d: 
                 moveLeft = False 
                 moveRight = True
-            if event.key == K_DOWN or event.key == K_w:
+            if event.key == K_UP or event.key == K_w:
                 moveDown = False 
                 moveUp = True     
             if event.key == K_DOWN or event.key == K_s:
@@ -90,7 +90,7 @@ while True:
     if moveDown and player.bottom < WINDOWHEIGHT:
         player.top += MOVESPEED
     if moveUp and player.top > 0:
-        player.top - MOVESPEED 
+        player.top -= MOVESPEED 
     if moveLeft and player.left > 0:
         player.left -= MOVESPEED 
     if moveRight and player.right < WINDOWWIDTH:
